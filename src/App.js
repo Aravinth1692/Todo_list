@@ -2,7 +2,8 @@
 import './App.css';
 import Card from "@material-ui/core/Card";
 import React, { useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [taskname, setTaskname] = useState('');
@@ -42,16 +43,29 @@ function App() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if(edit == false){
-      var filval = todos.filter((val)=>val.id == editValue)
-      filval[0].name=taskname
-      filval[0].description=taskDesc
-      setTodos(todos)
-      setEditDecs(true)
+    if(taskname === "" || taskDesc === ""){
+      notify();
+      return
     }
     else{
-      addTodo(taskname, taskDesc);
+      if(edit === false){
+        var filval = todos.filter((val)=>val.id === editValue)
+        filval[0].name=taskname
+        filval[0].description=taskDesc
+        setTodos(todos)
+        setEditDecs(true)
+      }
+      else{
+        addTodo(taskname, taskDesc);
+      }
+    setTaskname("");
+    setTaskDecs("");
     }
+ 
+  }
+  const clear =(e) => {
+    e.preventDefault();
+    setEditDecs(true)
     setTaskname("");
     setTaskDecs("");
   }
@@ -65,9 +79,11 @@ function App() {
     setTodos([...todos, newTodoList]);
     setCountryValue('0');
   };
+  const notify = () => toast.error("Please Fill Title and Description");
   return (
 
     <div style={{ width: 1008, padding: 30, border: '1px solid black', display: 'flex', marginLeft: 168, marginTop: 60 }}>
+      <ToastContainer />
       <form onSubmit={onSubmit}>
         <Card style={{ width: 950, height: 40, padding: 30, border: 'none', boxShadow: 'none', display: 'flex', marginRight: 20, marginLeft: 15, borderRadius: 14 }}>
           <div style={{ marginLeft: 20 }}>
@@ -78,13 +94,14 @@ function App() {
           </div>
 
 
-          <button type='submit' style={{ width: 100, height: 24, background: '#9ACD32', borderRadius: 6, border: '1px solid green', marginRight: 10, marginLeft: 20 }} onClick={onSubmit} >{edit == true ? 'Add Task':'Edit Task'}</button>
+          <button type='submit' style={{ width: 100, height: 24, background: '#9ACD32', borderRadius: 6, border: '1px solid #9ACD32', marginRight: 10, marginLeft: 20 }} onClick={onSubmit} >{edit === true ? 'Add Task':'Edit Task'}</button>
+          <button type='submit' style={{ width: 100, height: 24, background: '#cccc', borderRadius: 6, border: '1px solid #cccc', marginRight: 10, marginLeft: 20 }} onClick={clear} >Clear</button>
         </Card>
-        <div style={{ display: 'flex' }}>
+        <div className='flex_Align'>
           {todos.map((input, index) => {
             return (input.enableBtn === true) && (
 
-              <Card style={{ width: 279, height: 150, background: '#ADDFAD', marginLeft: 45, padding: 6 }} >
+              <Card style={{ width: 279, height: 150, background: '#ADDFAD', marginLeft: 45, padding: 6 ,marginBottom :13 }} >
                 <form>
 
                   <div key={index} >
