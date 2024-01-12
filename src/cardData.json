@@ -1,0 +1,69 @@
+{
+    "items": [
+      {
+        "name": "FREE",
+        "title":"$0/month",
+        "value":"Single User",
+        "is_ticked":"true",
+        "value2":"50GB Storage",
+        "is_ticked2":"true",
+        "value3":"Unlimited Public Projects",
+        "is_ticked3":"true",
+        "value4":"Community Access",
+        "is_ticked4":"true",
+        "value5":"Unlimited Private Projects",
+        "is_ticked5":"false",
+        "value6":"Dedicated Phone Support",
+        "is_ticked6":"false",
+        "value7":"Free Subdomain",
+        "is_ticked7":"false",
+        "value8":"Monthly Status Reports",
+        "is_ticked8":"false",
+        "buttonEnable":"false"
+      },
+      {
+        "name": "PLUS",
+        "title":"$9/month",
+        "value":"5 Users",
+        "is_ticked":"true",
+        "value2":"50GB Storage",
+        "is_ticked2":"true",
+        "value3":"Unlimited Public Projects",
+        "is_ticked3":"true",
+        "value4":"Community Access",
+        "is_ticked4":"true",
+        "value5":"Unlimited Private Projects",
+        "is_ticked5":"true",
+        "value6":"Dedicated Phone Support",
+        "is_ticked6":"true",
+        "value7":"Free Subdomain",
+        "is_ticked7":"true",
+        "value8":"Monthly Status Reports",
+        "is_ticked8":"false",
+        "buttonEnable":"false"
+      },
+      {
+        "name": "PRO",
+        "title":"$49/month",
+        "value":"Unlimites Users",
+        "is_ticked":"true",
+        "value2":"50GB Storage",
+        "is_ticked2":"true",
+        "value3":"Unlimited Public Projects",
+        "is_ticked3":"true",
+        "value4":"Community Access",
+        "is_ticked4":"true",
+        "value5":"Unlimited Private Projects",
+        "is_ticked5":"true",
+        "value6":"Dedicated Phone Support",
+        "is_ticked6":"true",
+        "value7":"Free Subdomain",
+        "is_ticked7":"true",
+        "value8":"Monthly Status Reports",
+        "is_ticked8":"true",
+        "buttonEnable":"true"
+      }
+    ]
+    
+  }
+
