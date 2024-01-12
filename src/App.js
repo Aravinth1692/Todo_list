@@ -36,6 +36,7 @@ function App() {
   const editField = (value,e)=>{
     setTaskname(value.name);
     SetCurrentEdit(value.id);
+    setCountryValue(value.status)
     setEditDecs(false)
     setTaskDecs(value.description);
     e.preventDefault();
@@ -52,14 +53,16 @@ function App() {
         var filval = todos.filter((val)=>val.id === editValue)
         filval[0].name=taskname
         filval[0].description=taskDesc
+        filval[0].status=countryValue
         setTodos(todos)
         setEditDecs(true)
       }
       else{
-        addTodo(taskname, taskDesc);
+        addTodo(taskname, taskDesc,countryValue);
       }
     setTaskname("");
     setTaskDecs("");
+    setCountryValue("0")
     }
  
   }
@@ -68,16 +71,18 @@ function App() {
     setEditDecs(true)
     setTaskname("");
     setTaskDecs("");
+    setCountryValue("0")
   }
-  const addTodo = (text, Desc) => {
+  const addTodo = (text, Desc,statuesVal) => {
     const newTodoList = {
       id: Date.now(),
       name: text,
       enableBtn: true,
-      description: Desc
+      description: Desc,
+      status:statuesVal==='' ? "0":statuesVal
     };
     setTodos([...todos, newTodoList]);
-    setCountryValue('0');
+    
   };
   const notify = () => toast.error("Please Fill Title and Description");
   return (
@@ -92,7 +97,10 @@ function App() {
           <div style={{ marginLeft: 20 }}>
             <input type="text" name="name" placeholder='Description' value={taskDesc} onChange={handleTaskDesc} />
           </div>
-
+          <div style={{marginLeft:5}}> Status: </div>
+          <select style={{ background: 'white', border: '1px solid black', height: 25, marginLeft: 8, borderRadius: 5 }} value={countryValue} onChange={(e) => setCountryValue(e.target.value)}>
+                          {options}
+                        </select>
 
           <button type='submit' style={{ width: 100, height: 24, background: '#9ACD32', borderRadius: 6, border: '1px solid #9ACD32', marginRight: 10, marginLeft: 20 }} onClick={onSubmit} >{edit === true ? 'Add Task':'Edit Task'}</button>
           <button type='submit' style={{ width: 100, height: 24, background: '#cccc', borderRadius: 6, border: '1px solid #cccc', marginRight: 10, marginLeft: 20 }} onClick={clear} >Clear</button>
@@ -106,12 +114,10 @@ function App() {
 
                   <div key={index} >
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}>Name :{input.name === '' ? ' - ' : input.name}</div>)}
-                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}>Description :{input.description === '' ? ' - ' : input.description}</div>)}
-                      {(input.enableBtn === true) && (<div style={{ width: 192, display: 'flex', marginLeft: 20, marginTop: 5 }}> Status:
-                        <select style={{ background: 'red', border: '1px solid red', height: 25, marginLeft: 8, borderRadius: 5 }} value={countryValue} onChange={(e) => setCountryValue(e.target.value)}>
-                          {options}
-                        </select>
+                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Name : </span>{input.name === '' ? ' - ' : input.name}</div>)}
+                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Description : </span>{input.description === '' ? ' - ' : input.description}</div>)}
+                      {(input.enableBtn === true) && (<div style={{ width: 192, display: 'flex', marginLeft: 20, marginTop: 5 }}> <span className='font_wt'>Status : </span>
+                      {input.status === '1' ? 'Completed ' : 'Not-Completed'}
                       </div>)}
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', marginLeft: 21, justifyContent: 'end', marginTop: 30, marginRight: 18 }}>
