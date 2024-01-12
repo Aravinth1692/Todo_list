@@ -97,7 +97,7 @@ function App() {
           <div style={{ marginLeft: 20 }}>
             <input type="text" name="name" placeholder='Description' value={taskDesc} onChange={handleTaskDesc} />
           </div>
-          <div style={{marginLeft:5}}> Status: </div>
+          <div style={{marginLeft:5}}> <span className='font_wt'>Status : </span></div>
           <select style={{ background: 'white', border: '1px solid black', height: 25, marginLeft: 8, borderRadius: 5 }} value={countryValue} onChange={(e) => setCountryValue(e.target.value)}>
                           {options}
                         </select>
@@ -114,10 +114,12 @@ function App() {
 
                   <div key={index} >
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Name : </span>{input.name === '' ? ' - ' : input.name}</div>)}
-                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Description : </span>{input.description === '' ? ' - ' : input.description}</div>)}
+                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Name : </span><span className='sub_field'>{input.name === '' ? ' - ' : input.name}</span></div>)}
+                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Description : </span>
+                      <span className='sub_field'>{input.description === '' ? ' - ' : input.description}</span>
+                      </div>)}
                       {(input.enableBtn === true) && (<div style={{ width: 192, display: 'flex', marginLeft: 20, marginTop: 5 }}> <span className='font_wt'>Status : </span>
-                      {input.status === '1' ? 'Completed ' : 'Not-Completed'}
+                     <span className='sub_field'>{input.status === '1' ? 'Completed ' : 'Not-Completed'}</span> 
                       </div>)}
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', marginLeft: 21, justifyContent: 'end', marginTop: 30, marginRight: 18 }}>
