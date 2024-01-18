@@ -87,29 +87,29 @@ function App() {
   const notify = () => toast.error("Please Fill Title and Description");
   return (
 
-    <div style={{ width: 1008, padding: 30, border: '1px solid black', display: 'flex', marginLeft: 168, marginTop: 60 }}>
+    <div style={{ border: '1px solid black', display: 'flex', marginLeft: 60, marginTop: 60 }} className='card_wdt'> 
       <ToastContainer />
       <form onSubmit={onSubmit}>
-        <Card style={{ width: 950, height: 40, padding: 30, border: 'none', boxShadow: 'none', display: 'flex', marginRight: 20, marginLeft: 15, borderRadius: 14 }}>
-          <div style={{ marginLeft: 20 }}>
+        <Card style={{ width: 'auto', height: 'auto', padding: 13, border: 'none', boxShadow: 'none', marginRight: 20, marginLeft: 15, borderRadius: 14 ,marginTop:30 }} className='card_fles'>
+          <div style={{ marginLeft: 20 ,marginBottom:10 }}>
             <input type="text" name="name" placeholder='Task' value={taskname} onChange={handleTaskName} />
           </div>
-          <div style={{ marginLeft: 20 }}>
+          <div style={{ marginLeft: 20 ,marginBottom:10  }}>
             <input type="text" name="name" placeholder='Description' value={taskDesc} onChange={handleTaskDesc} />
           </div>
-          <div style={{marginLeft:5}}> <span className='font_wt'>Status : </span></div>
-          <select style={{ background: 'white', border: '1px solid black', height: 25, marginLeft: 8, borderRadius: 5 }} value={countryValue} onChange={(e) => setCountryValue(e.target.value)}>
+          <div className='mrgLft20' style={{marginBottom:10 }}> <span className='font_wt'>Status : </span></div>
+          <select className='mrgLft20' style={{ background: 'white', border: '1px solid black', height: 25, borderRadius: 5,marginBottom:10 }} value={countryValue} onChange={(e) => setCountryValue(e.target.value)}>
                           {options}
                         </select>
 
-          <button type='submit' style={{ width: 100, height: 24, background: '#9ACD32', borderRadius: 6, border: '1px solid #9ACD32', marginRight: 10, marginLeft: 20 }} onClick={onSubmit} >{edit === true ? 'Add Task':'Edit Task'}</button>
-          <button type='submit' style={{ width: 100, height: 24, background: '#cccc', borderRadius: 6, border: '1px solid #cccc', marginRight: 10, marginLeft: 20 }} onClick={clear} >Clear</button>
+          <button type='submit' style={{ width: 100, height: 24, background: '#9ACD32', borderRadius: 6, border: '1px solid #9ACD32', marginRight: 10, marginLeft: 20 ,marginBottom:10}} onClick={onSubmit} >{edit === true ? 'Add Task':'Edit Task'}</button>
+          <button type='submit' style={{ width: 100, height: 24, background: '#cccc', borderRadius: 6, border: '1px solid #cccc', marginRight: 10, marginLeft: 20 ,marginBottom:10}} onClick={clear} >Clear</button>
         </Card>
         <div className='flex_Align'>
           {todos.map((input, index) => {
             return (input.enableBtn === true) && (
 
-              <Card style={{ width: 279, height: 150, background: '#ADDFAD', marginLeft: 45, padding: 6 ,marginBottom :13 }} >
+              <Card style={{ width:'auto', height: 150, background: '#ADDFAD', marginLeft: 45, padding: 6 ,marginBottom :13 ,marginRight:48}} >
                 <form>
 
                   <div key={index} >

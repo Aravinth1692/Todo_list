@@ -43,8 +43,15 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-left: 25%;
+    /* margin-left: 25%; */
   }     
+  .card_fles{
+    display: flex;
+    flex-direction: column;
+  }
+  .mrgLft20{
+    margin-left: 20px;
+  }
 } 
 @media (min-width:481px)  {  
   .flex_Align{
@@ -52,7 +59,14 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-left: 25%;
+    /* margin-left: 25%; */
+  }
+  .card_fles{
+    display: flex;
+    flex-direction: column;
+  }
+  .mrgLft20{
+    margin-left: 20px;
   }
 } 
 @media (min-width:641px)  {  
@@ -61,7 +75,14 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-left: 25%;
+    /* margin-left: 25%; */
+  }
+  .card_fles{
+    display: flex;
+    flex-direction: column;
+  }
+  .mrgLft20{
+    margin-left: 20px;
   }
 } 
 @media (min-width:961px)  {  
@@ -72,6 +93,13 @@
       justify-content: flex-start;
       margin: 10px;
   }
+  .card_fles{
+    display: flex;
+    flex-direction: row;
+  }
+  .mrgLft20{
+    margin-left: 8px;
+  }
 } 
 @media (min-width:1025px) {  
   .flex_Align{
@@ -81,6 +109,13 @@
       justify-content: flex-start;
       margin: 10px;
   }
+  .card_fles{
+    display: flex;
+    flex-direction: row;
+  }
+  .mrgLft20{
+    margin-left: 8px;
+  }
 } 
 @media (min-width:1281px) {  
   .flex_Align{
@@ -89,6 +124,13 @@
       flex-wrap: wrap;
       justify-content: flex-start;
       margin: 10px;
+  }
+  .card_fles{
+    display: flex;
+    flex-direction: row;
+  }
+  .mrgLft20{
+    margin-left: 8px;
   }
 }
 .font_wt{
@@ -103,3 +145,7 @@
   font-size: 14px;
   font-family: 'Poppins';
 }
+.card_wdt{
+  width: 70%;
+}
+/* padding: 30,  */
