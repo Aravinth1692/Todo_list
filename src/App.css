@@ -52,6 +52,22 @@
   .mrgLft20{
     margin-left: 20px;
   }
+  .width70{
+    width: 70%;
+  }
+  .inner_card_wdth{
+    width: 60%;
+  }
+  .txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 65%;
+  }
+  .desc_txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 48%;
+  }
 } 
 @media (min-width:481px)  {  
   .flex_Align{
@@ -67,6 +83,22 @@
   }
   .mrgLft20{
     margin-left: 20px;
+  }
+  .width70{
+    width: 70%;
+  }
+  .inner_card_wdth{
+    width: 60%;
+  }
+  .txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 65%;
+  }
+  .desc_txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 48%;
   }
 } 
 @media (min-width:641px)  {  
@@ -84,6 +116,22 @@
   .mrgLft20{
     margin-left: 20px;
   }
+  .width70{
+    width: 70%;
+  }
+  .inner_card_wdth{
+    width: 60%;
+  }
+  .txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 65%;
+  }
+  .desc_txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 48%;
+  }
 } 
 @media (min-width:961px)  {  
   .flex_Align{
@@ -99,6 +147,22 @@
   }
   .mrgLft20{
     margin-left: 8px;
+  }
+  .width70{
+    width: 13%;
+  }
+  .inner_card_wdth{
+    width: 30%;
+  }
+  .txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 78%;
+  }
+  .desc_txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 58%;
   }
 } 
 @media (min-width:1025px) {  
@@ -116,6 +180,22 @@
   .mrgLft20{
     margin-left: 8px;
   }
+  .width70{
+    width: 13%;
+  }
+  .inner_card_wdth{
+    width: 30%;
+  }
+  .txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 78%;
+  }
+  .desc_txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 58%;
+  }
 } 
 @media (min-width:1281px) {  
   .flex_Align{
@@ -131,6 +211,22 @@
   }
   .mrgLft20{
     margin-left: 8px;
+  }
+  .width70{
+    width: 13%;
+  }
+  .inner_card_wdth{
+    width: 30%;
+  }
+  .txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 78%;
+  }
+  .desc_txt_wrap{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    width: 58%;
   }
 }
 .font_wt{
@@ -149,3 +245,4 @@
   width: 70%;
 }
 /* padding: 30,  */
+

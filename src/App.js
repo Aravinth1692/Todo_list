@@ -90,7 +90,7 @@ function App() {
     <div style={{ border: '1px solid black', display: 'flex', marginLeft: 60, marginTop: 60 }} className='card_wdt'> 
       <ToastContainer />
       <form onSubmit={onSubmit}>
-        <Card style={{ width: 'auto', height: 'auto', padding: 13, border: 'none', boxShadow: 'none', marginRight: 20, marginLeft: 15, borderRadius: 14 ,marginTop:30 }} className='card_fles'>
+        <div style={{ width: 'auto', height: 'auto', padding: 13, border: 'none', boxShadow: 'none', marginRight: 20, marginLeft: 15, borderRadius: 14 ,marginTop:30 }} className='card_fles'>
           <div style={{ marginLeft: 20 ,marginBottom:10 }}>
             <input type="text" name="name" placeholder='Task' value={taskname} onChange={handleTaskName} />
           </div>
@@ -98,25 +98,28 @@ function App() {
             <input type="text" name="name" placeholder='Description' value={taskDesc} onChange={handleTaskDesc} />
           </div>
           <div className='mrgLft20' style={{marginBottom:10 }}> <span className='font_wt'>Status : </span></div>
-          <select className='mrgLft20' style={{ background: 'white', border: '1px solid black', height: 25, borderRadius: 5,marginBottom:10 }} value={countryValue} onChange={(e) => setCountryValue(e.target.value)}>
+          <div className='mrgLft20 '>
+          <select  style={{ background: 'white', border: '1px solid black', height: 25, borderRadius: 5,marginBottom:10 }} value={countryValue} onChange={(e) => setCountryValue(e.target.value)}>
                           {options}
                         </select>
+          </div>
+    
 
           <button type='submit' style={{ width: 100, height: 24, background: '#9ACD32', borderRadius: 6, border: '1px solid #9ACD32', marginRight: 10, marginLeft: 20 ,marginBottom:10}} onClick={onSubmit} >{edit === true ? 'Add Task':'Edit Task'}</button>
           <button type='submit' style={{ width: 100, height: 24, background: '#cccc', borderRadius: 6, border: '1px solid #cccc', marginRight: 10, marginLeft: 20 ,marginBottom:10}} onClick={clear} >Clear</button>
-        </Card>
+        </div>
         <div className='flex_Align'>
           {todos.map((input, index) => {
             return (input.enableBtn === true) && (
 
-              <Card style={{ width:'auto', height: 150, background: '#ADDFAD', marginLeft: 45, padding: 6 ,marginBottom :13 ,marginRight:48}} >
+              <div style={{ height: 147, background: '#ADDFAD', marginLeft: 45, padding: 6 ,marginBottom :13 ,marginRight:48}} className='inner_card_wdth'>
                 <form>
 
                   <div key={index} >
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Name : </span><span className='sub_field'>{input.name === '' ? ' - ' : input.name}</span></div>)}
+                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Name : </span><span className='sub_field txt_wrap'>{input.name === '' ? ' - ' : input.name}</span></div>)}
                       {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Description : </span>
-                      <span className='sub_field'>{input.description === '' ? ' - ' : input.description}</span>
+                      <span className='sub_field desc_txt_wrap'>{input.description === '' ? ' - ' : input.description}</span>
                       </div>)}
                       {(input.enableBtn === true) && (<div style={{ width: 192, display: 'flex', marginLeft: 20, marginTop: 5 }}> <span className='font_wt'>Status : </span>
                      <span className='sub_field'>{input.status === '1' ? 'Completed ' : 'Not-Completed'}</span> 
@@ -140,7 +143,7 @@ function App() {
                   </div>
 
                 </form>
-              </Card>
+              </div>
 
             )
           })}
