@@ -109,19 +109,20 @@ function App() {
           <button type='submit' style={{ width: 100, height: 24, background: '#cccc', borderRadius: 6, border: '1px solid #cccc', marginRight: 10, marginLeft: 20 ,marginBottom:10}} onClick={clear} >Clear</button>
         </div>
         <div className='flex_Align'>
+          
           {todos.map((input, index) => {
             return (input.enableBtn === true) && (
 
               <div style={{ height: 147, background: '#ADDFAD', marginLeft: 45, padding: 6 ,marginBottom :13 ,marginRight:48}} className='inner_card_wdth'>
                 <form>
-
+                  
                   <div key={index} >
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Name : </span><span className='sub_field txt_wrap'>{input.name === '' ? ' - ' : input.name}</span></div>)}
-                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Description : </span>
+                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Name: </span><span className='sub_field txt_wrap'>{input.name === '' ? ' - ' : input.name}</span></div>)}
+                      {(input.enableBtn === true) && (<div style={{ marginLeft: 20, display: 'flex' }}><span className='font_wt'>Description: </span>
                       <span className='sub_field desc_txt_wrap'>{input.description === '' ? ' - ' : input.description}</span>
                       </div>)}
-                      {(input.enableBtn === true) && (<div style={{ width: 192, display: 'flex', marginLeft: 20, marginTop: 5 }}> <span className='font_wt'>Status : </span>
+                      {(input.enableBtn === true) && (<div style={{ width: 192, display: 'flex', marginLeft: 20, marginTop: 5 }}> <span className='font_wt'>Status: </span>
                      <span className='sub_field'>{input.status === '1' ? 'Completed ' : 'Not-Completed'}</span> 
                       </div>)}
                     </div>
