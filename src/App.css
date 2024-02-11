@@ -235,6 +235,12 @@
   font-size: 14px;
   font-family: 'Poppins';
 }
+.font_wt10{
+  font-weight: 600;
+  margin-right: 4px;
+  font-size: 10px;
+  font-family: 'Poppins';
+}
 .sub_field{
   font-weight: 400;
   margin-right: 4px;

@@ -97,7 +97,7 @@ function App() {
           <div style={{ marginLeft: 20 ,marginBottom:10  }}>
             <input type="text" name="name" placeholder='Description' value={taskDesc} onChange={handleTaskDesc} />
           </div>
-          <div className='mrgLft20' style={{marginBottom:10 }}> <span className='font_wt'>Status : </span></div>
+          <div className='mrgLft20' style={{marginBottom:10 }}> <span className='font_wt'>Status  </span></div>
           <div className='mrgLft20 '>
           <select  style={{ background: 'white', border: '1px solid black', height: 25, borderRadius: 5,marginBottom:10 }} value={countryValue} onChange={(e) => setCountryValue(e.target.value)}>
                           {options}
